@@ -1,0 +1,3 @@
+include README.md LICENSE MANIFEST.in
+include muddler/VERSION
+global-exclude *~
