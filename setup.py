@@ -62,7 +62,7 @@ setup(
     author_email='oobeid@nyu.edu',
     maintainer='Ossama W. Obeid',
     maintainer_email='oobeid@nyu.edu',
-    packages=['muddler'],
+    packages=['muddler', 'muddler.v1'],
     include_package_data=True,
     entry_points={
         'console_scripts': [
