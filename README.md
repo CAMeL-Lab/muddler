@@ -32,7 +32,7 @@ pip install muddler
 
 ```text
 Usage: muddler muddle -s <SRC_PATH> -t <TRG_PATH> <MUDDLED_PATH>
-       muddler muddle -c <CONFIG> -s <SRC_PATH> -t <TRG_PATH> <MUDDLED_OUT>
+       muddler muddle -c <CONFIG> -s <SRC_PATH> -t <TRG_PATH> <MUDDLED_PATH>
        muddler unmuddle -s <SRC_FILE> -m <MUDDLED_PATH> <TARGET_OUT>
        muddler (-h | --help)
        muddler (-v | --version)

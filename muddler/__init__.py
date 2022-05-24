@@ -1,6 +1,6 @@
 # MIT License
 #
-# Copyright 2020 New York University Abu Dhabi
+# Copyright 2020-2022 New York University Abu Dhabi
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -24,7 +24,7 @@
 """The Muddler derived-file sharing utility.
 
 Usage: muddler muddle -s <SRC_PATH> -t <TRG_PATH> <MUDDLED_PATH>
-       muddler muddle -c <CONFIG> -s <SRC_PATH> -t <TRG_PATH> <MUDDLED_OUT>
+       muddler muddle -c <CONFIG> -s <SRC_PATH> -t <TRG_PATH> <MUDDLED_PATH>
        muddler unmuddle -s <SRC_FILE> -m <MUDDLED_PATH> <TARGET_OUT>
        muddler (-h | --help)
        muddler (-v | --version)
@@ -71,7 +71,7 @@ def muddle_command(arguments):
 
     src_path = Path(arguments['-s'])
     trg_path = Path(arguments['-t'])
-    muddle_path = Path(arguments['<MUDDLED_OUT>'])
+    muddle_path = Path(arguments['<MUDDLED_PATH>'])
 
     if arguments['-c'] is None:
         if not src_path.is_file():
@@ -141,7 +141,7 @@ def unmuddle_command(arguments):
 
 def main():
     arguments = docopt.docopt(__doc__, version=__version__)
-
+    print(arguments)
     if arguments['muddle']:
         muddle_command(arguments)
     elif arguments['unmuddle']:
