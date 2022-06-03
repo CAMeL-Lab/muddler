@@ -141,7 +141,7 @@ def unmuddle_command(arguments):
 
 def main():
     arguments = docopt.docopt(__doc__, version=__version__)
-    print(arguments)
+
     if arguments['muddle']:
         muddle_command(arguments)
     elif arguments['unmuddle']:
