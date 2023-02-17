@@ -93,21 +93,21 @@ def muddle_command(arguments):
             with open(config_path, 'r') as config_fp:
                 config = parse_config(config_fp)
         except MuddlerConfigException as m:
-            print('[Config Error]', str(m))
+            print('[Config Error]', str(m), file=sys.stderr)
             sys.exit(1)
 
     try:
         muddle(config, src_path, trg_path, muddle_path)
     except MuddleException as m:
-        if os.environ('MUDDLER_DEBUG'):
-            traceback.print_exc(file=sys.stdout)
+        if os.environ.get('MUDDLER_DEBUG', False):
+            traceback.print_exc(file=sys.stderr)
             sys.exit(1)
         else:
-            print(str(m))
+            print(str(m), file=sys.stderr)
             sys.exit(1)
     except Exception:
-        if os.environ('MUDDLER_DEBUG'):
-            traceback.print_exc(file=sys.stdout)
+        if os.environ['MUDDLER_DEBUG']:
+            traceback.print_exc(file=sys.stderr)
             sys.exit(1)
         else:
             print('An error occured while unmuddling file.')
@@ -124,18 +124,18 @@ def unmuddle_command(arguments):
     try:
         unmuddle(src_path, muddled_path, target_path)
     except UnmuddleException as m:
-        if os.environ('MUDDLER_DEBUG'):
-            traceback.print_exc(file=sys.stdout)
+        if os.environ['MUDDLER_DEBUG']:
+            traceback.print_exc(file=sys.stderr)
             sys.exit(1)
         else:
-            print(str(m))
+            print(str(m), file=sys.stderr)
             sys.exit(1)
     except Exception:
-        if os.environ('MUDDLER_DEBUG'):
-            traceback.print_exc(file=sys.stdout)
+        if os.environ['MUDDLER_DEBUG']:
+            traceback.print_exc(file=sys.stderr)
             sys.exit(1)
         else:
-            print('An error occured while unmuddling file.')
+            print('An error occured while unmuddling file.', file=sys.stderr)
             sys.exit(1)
 
 
