@@ -9,7 +9,7 @@ non-public source without sharing the source itself.
 Muddler solves this issue by "subtracting" the source data from the target
 (or derived) data, a process we call *muddling*.
 This generates a *muddled package* that can be distributed publicly.
-In order to retrieve the target data, users must first acquire the derived data
+In order to retrieve the target data, users must first acquire the source data
 through proper channels and can then *unmuddle* the *muddled package* through
 Muddler to generate the target data.
 
